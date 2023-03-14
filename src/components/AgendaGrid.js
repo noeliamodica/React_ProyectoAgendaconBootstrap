@@ -1,5 +1,6 @@
 import { useState } from 'react' 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { AgendaCard } from './AgendaCard';
 
 export default function AgendaGrid (){
 
@@ -37,11 +38,11 @@ export default function AgendaGrid (){
             </form>
 
             <div>
-                {agendados.map((item) =>(
-                    <div key = {item.id} item={item}>
-                        
-                        {item.title}
-                    </div>
+                {agendados.map(item =>(
+                    
+                        <AgendaCard  key={item.id} item={item} />
+                     
+                    
                 ))
                 
                 }
