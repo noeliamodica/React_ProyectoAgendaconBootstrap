@@ -1,4 +1,5 @@
 import { useState } from 'react' 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function AgendaGrid (){
 
@@ -25,10 +26,11 @@ export default function AgendaGrid (){
 
 
     return (
-        <div>
+        <div className="form-control">
             <form onSubmit={handleSubmit}>
-              <input onChange={handleChange}  value={title}/>
-              <input type="submit" 
+              <input className="form-control" onChange={handleChange}  value={title}/>
+              <input className="form-control"
+                      type="submit" 
                       value="Agendar"
                       onClick={handleSubmit}/>
               
