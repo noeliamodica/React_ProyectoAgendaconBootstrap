@@ -39,9 +39,9 @@ export default function AgendaGrid (){
 
             <div>
                 {agendados.map(item =>(
-                    
+                        <div className='p-2'> 
                         <AgendaCard  key={item.id} item={item} />
-                     
+                        </div>
                     
                 ))
                 
