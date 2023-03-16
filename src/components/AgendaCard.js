@@ -38,6 +38,7 @@ export function AgendaCard({item, onUpdate}){
 
         return(
             <div>
+                <span> {item.title} </span>
                  <button className="button" onClick={ ()=> setEdit(true) }>Edit</button>
                 <buttton className="text-danger ">Eliminar</buttton>
             </div>
