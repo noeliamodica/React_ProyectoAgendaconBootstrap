@@ -1,4 +1,4 @@
-import { useState } from 'react' 
+import { useRef, useState } from 'react' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AgendaCard } from './AgendaCard';
 
@@ -6,16 +6,19 @@ export default function AgendaGrid (){
 
     const [title, setTitle]= useState('')
     const [agendados, setAgendados] = useState([])
+    const refInput = useRef(null);
 
   
 
     function handleChange (event){
         const value = event.target.value
+        
         setTitle (value)
     }
    
     function handleSubmit (e){
         e.preventDefault();
+        refInput.current.focus();
         const newData ={
             id: crypto.randomUUID(),
             title: title,
@@ -43,7 +46,7 @@ export default function AgendaGrid (){
     return (
         <div className="form-control">
             <form onSubmit={handleSubmit}>
-              <input className="form-control" onChange={handleChange}  value={title}/>
+              <input className="form-control" ref={refInput} onChange={handleChange}  value={title}/>
               <input className="form-control"
                       type="submit" 
                       value="Agendar"
