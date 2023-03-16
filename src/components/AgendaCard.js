@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export function AgendaCard({item, onUpdate}){
+export function AgendaCard({item, onUpdate, onDelete}){
 
     const [edit, setEdit] = useState (false);
 
@@ -40,7 +40,7 @@ export function AgendaCard({item, onUpdate}){
             <div>
                 <span> {item.title} </span>
                  <button className="button" onClick={ ()=> setEdit(true) }>Edit</button>
-                <buttton className="text-danger ">Eliminar</buttton>
+                <buttton className="button" onClick={ (e)=> onDelete (item.id)}>Eliminar</buttton>
             </div>
         )
 

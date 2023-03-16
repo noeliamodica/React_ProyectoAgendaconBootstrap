@@ -23,12 +23,19 @@ export default function AgendaGrid (){
         } 
 
         setAgendados ([...agendados, newData] )
+        setTitle ("");
     }
 
     function handleUpdate(id, value){
         const temp =[...agendados];
         const item = temp.find(item => item.id ===id );
         item.title = value
+        setAgendados(temp)
+        
+    }
+
+    function handleDelete (id){
+        const temp= agendados.filter(item => item.id !== id)
         setAgendados(temp)
     }
 
@@ -47,7 +54,7 @@ export default function AgendaGrid (){
             <div>
                 {agendados.map(item =>(
                         <div className='p-2'> 
-                        <AgendaCard  key={item.id} item={item} onUpdate={handleUpdate} />
+                        <AgendaCard  key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}  />
                         </div>
                     
                 ))
