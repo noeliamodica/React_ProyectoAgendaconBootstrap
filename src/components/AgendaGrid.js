@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react' 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AgendaCard } from './AgendaCard';
+import AgendaEmojis from './AgendaEmojis';
 
 export default function AgendaGrid (){
 
@@ -18,7 +19,7 @@ export default function AgendaGrid (){
    
     function handleSubmit (e){
         e.preventDefault();
-        refInput.current.focus();
+        
         const newData ={
             id: crypto.randomUUID(),
             title: title,
@@ -46,7 +47,7 @@ export default function AgendaGrid (){
     return (
         <div className="form-control">
             <form onSubmit={handleSubmit}>
-              <input className="form-control" ref={refInput} onChange={handleChange}  value={title}/>
+              <input className="form-control"  onChange={handleChange}  value={title}/>
               <input className="form-control"
                       type="submit" 
                       value="Agendar"
@@ -57,6 +58,8 @@ export default function AgendaGrid (){
             <div>
                 {agendados.map(item =>(
                         <div className='p-2'> 
+                        <input ref={refInput}/>
+                        <AgendaEmojis ref={refInput} />
                         <AgendaCard  key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}  />
                         </div>
                     

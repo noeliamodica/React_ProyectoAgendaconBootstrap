@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AgendaEmojis from './AgendaEmojis';
 
 export function AgendaCard({item, onUpdate, onDelete}){
 
@@ -38,6 +39,7 @@ export function AgendaCard({item, onUpdate, onDelete}){
 
         return(
             <div>
+                
                 <span> {item.title} </span>
                  <button className="button" onClick={ ()=> setEdit(true) }>Edit</button>
                 <buttton className="button" onClick={ (e)=> onDelete (item.id)}>Eliminar</buttton>
