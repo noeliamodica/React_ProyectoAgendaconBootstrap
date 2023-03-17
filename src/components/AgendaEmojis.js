@@ -27,28 +27,21 @@ export  function AgendaEmojis (props, inputRef){
 
     }
 
-    //function EmojiContainer (){
-      //  return (
-      //      <div>
-      //          <EmojiSearch onSearch={handleSearch} />
-       //         <div>
-        //        {emojiList.map(emoji =>
-         //           <div> {emoji.symbol} </div> ) }
-          //      </div>
-           // </div>
-       // )
-   // }
-
+   
     return(
         <div>
             <button onClick={handleClickOpen}> 😊 </button>
-            { isOpen ? <div>
-                <EmojiSearch onSearch={handleSearch} />
+            { isOpen ? 
+            (
                 <div>
-                {emojiList.map(emoji =>
-                    <div> {emoji.symbol} </div> ) }
+                    <EmojiSearch onSearch={handleSearch} />
+                    <div>
+                   {emojis.map(emoji =>
+                        <div> {emoji.symbol} </div> ) }
+                    </div>
                 </div>
-            </div>
+            )
+                
                 : ""}
         </div>
     )

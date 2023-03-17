@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AgendaEmojis from './AgendaEmojis';
+
 
 export function AgendaCard({item, onUpdate, onDelete}){
 
