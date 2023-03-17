@@ -1,4 +1,4 @@
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function EmojiButton ({emoji, onClick }){
 
@@ -7,6 +7,6 @@ export default function EmojiButton ({emoji, onClick }){
     }
 
     return(
-        <button onClick={handleClick}> {emoji.symbol} </button>
+        <button variant="light" onClick={handleClick}> {emoji.symbol} </button>
     )
 }

@@ -26,7 +26,8 @@ export function AgendaCard({item, onUpdate, onDelete}){
 
         return (
             <form onSubmit={handleSubmit}>
-            <input type='text' className="todoInput" onChange={handleChange} value={newValue} />
+
+            <input  type='text' className="flex bg-light border shadow p-2 mb-3 bg-body rounded" onChange={handleChange} value={newValue} />
             <buttton className="p-1 " onClick={handleClickUpdate}>Editar</buttton>
             </form>
         )
@@ -50,7 +51,7 @@ export function AgendaCard({item, onUpdate, onDelete}){
 
     
     return(
-        <div className="flex bg-light border shadow p-2 mb-3 bg-body rounded  ">
+        <div className="flex bg-light border shadow p-2 mb-3 bg-body rounded">
             
             {
                 edit ? <FormEdit />

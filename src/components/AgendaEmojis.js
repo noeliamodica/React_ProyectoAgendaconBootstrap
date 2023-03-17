@@ -2,6 +2,7 @@ import { forwardRef, useState } from "react"
 import { data as emojiList } from "../data";
 import EmojiButton from "./EmojiButton";
 import { EmojiSearch } from "./EmojiSearch";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export  function AgendaEmojis (props, inputRef){
 
@@ -37,7 +38,7 @@ export  function AgendaEmojis (props, inputRef){
     
     return(
         <div>
-            <button onClick={handleClickOpen}> 😊 </button>
+            <button  variant="light" onClick={handleClickOpen}> ⏲️ </button>
             { isOpen ? 
             (
                 <div>

@@ -57,10 +57,12 @@ export default function AgendaGrid (){
 
             <div>
                 {agendados.map(item =>(
-                        <div className='p-2'> 
-                        <input ref={refInput}/>
+                        <div className="form-group"> 
+                        <div className="input-group">
+                        <input className="input-group-addon flex bg-light border shadow p-2 mb-3 bg-body rounded" ref={refInput}/>
                         <AgendaEmojis ref={refInput} />
-                        <AgendaCard  key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}  />
+                        <AgendaCard className="form-control" key={item.id} item={item} onUpdate={handleUpdate} onDelete={handleDelete}  />
+                        </div>
                         </div>
                     
                 ))
