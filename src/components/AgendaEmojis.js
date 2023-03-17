@@ -1,5 +1,6 @@
 import { forwardRef, useState } from "react"
 import { data as emojiList } from "../data";
+import EmojiButton from "./EmojiButton";
 import { EmojiSearch } from "./EmojiSearch";
 
 export  function AgendaEmojis (props, inputRef){
@@ -13,7 +14,7 @@ export  function AgendaEmojis (props, inputRef){
 
     function handleSearch(e){
         const q = e.target.value.toLowerCase();
-        //si esxiste un valor
+        //si existe un valor
         
         if (!!q) {
             const search = emojiList.filter((emoji) => {
@@ -26,8 +27,14 @@ export  function AgendaEmojis (props, inputRef){
         }
 
     }
+    function handleEmojiClick(emoji){
+       
+        inputRef.current.value = emoji.symbol
+        inputRef.current.selectionStart = emoji.symbol.length
 
+    }
    
+    
     return(
         <div>
             <button onClick={handleClickOpen}> 😊 </button>
@@ -37,7 +44,11 @@ export  function AgendaEmojis (props, inputRef){
                     <EmojiSearch onSearch={handleSearch} />
                     <div>
                    {emojis.map(emoji =>
-                        <div> {emoji.symbol} </div> ) }
+                        <EmojiButton 
+                            key={emoji.symbol}
+                            emoji={emoji}
+                            onClick={handleEmojiClick}
+                        />) }
                     </div>
                 </div>
             )
