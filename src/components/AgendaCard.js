@@ -27,7 +27,7 @@ export function AgendaCard({item, onUpdate, onDelete}){
         return (
             <form onSubmit={handleSubmit}>
 
-            <input  type='text' className="flex bg-light border shadow p-2 mb-3 bg-body rounded" onChange={handleChange} value={newValue} />
+            <input  type='text'  onChange={handleChange} value={newValue} />
             <buttton className="p-1 " onClick={handleClickUpdate}>Editar</buttton>
             </form>
         )
@@ -39,11 +39,11 @@ export function AgendaCard({item, onUpdate, onDelete}){
 
 
         return(
-            <div>
+            <div  className="form-control"> 
                 
-                <span> {item.title} </span>
+                <span  className="form-control"> {item.title} </span>
                  <button className="button" onClick={ ()=> setEdit(true) }>Edit</button>
-                <buttton className="button" onClick={ (e)=> onDelete (item.id)}>Eliminar</buttton>
+                 <buttton className="button float-rigth" onClick={ (e)=> onDelete (item.id)}>Eliminar</buttton>
             </div>
         )
 
@@ -51,7 +51,7 @@ export function AgendaCard({item, onUpdate, onDelete}){
 
     
     return(
-        <div className="flex bg-light border shadow p-2 mb-3 bg-body rounded">
+        <div className="flex bg-light border shadow p-2 mb-1 bg-body rounded">
             
             {
                 edit ? <FormEdit />
